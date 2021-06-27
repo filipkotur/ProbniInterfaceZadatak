@@ -5,11 +5,13 @@ import java.util.Date;
 
 public class ShoppingItem extends Product implements IShoppingItem{
     Long ID;
-    Product proizvod = new Product();
-    private BigDecimal quantity;
-    public ShoppingItem(Product stvar,BigDecimal kolicina){
-        proizvod=stvar;
-        quantity=kolicina;
+    Product oneProduct = new Product();
+    Date lastModified = new Date();
+    public BigDecimal quantity;
+    public ShoppingItem(){}
+    public ShoppingItem(Product product,BigDecimal amount){
+        oneProduct =product;
+        quantity=amount;
 
     }
 
@@ -20,9 +22,8 @@ public class ShoppingItem extends Product implements IShoppingItem{
     }
     @Override
     public IProduct getProduct(){
-        //proizvod.
 
-        return proizvod;
+        return oneProduct;
 
 
     };
@@ -31,33 +32,24 @@ public class ShoppingItem extends Product implements IShoppingItem{
         return this.quantity;
     };
 
-    /**
-     *
-     * @return Single price of the product
-     */
-    @Override
+
     public BigDecimal getPrice(){
-        return null;
+
+        return oneProduct.priceOfProduct;
 
     };
 
-    /**
-     *
-     * @return Last modification time and date of the item
-     */
-    @Override
+
 
     public Date getLastModifyTime(){
-        return null;
+        return lastModified;
 
     };
 
-    /**
-     *
-     * @return Total price amount for this item
-     */    @Override
 
-    public BigDecimal getTotalAmount(){        return null;
+
+    public BigDecimal getTotalAmount(){
+        return null;
     };
 
 

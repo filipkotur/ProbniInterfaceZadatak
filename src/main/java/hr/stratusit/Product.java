@@ -4,30 +4,30 @@ import java.math.BigDecimal;
 
 public class Product implements IProduct{
     int val;
-    String NameofProduct;
-    String NameofProducer;
-    String Description;
-    BigDecimal PriceofProduct;
+    String nameOfProduct;
+    String nameOfProducer;
+    String description;
+    BigDecimal priceOfProduct;
     BigDecimal StockAmountinwarehouse;
     Product(String productName, int quantity, double unitPrice){
          }
     Product(){
     }
     public String getProducer(){
-            return this.NameofProducer;
+            return this.nameOfProducer;
 
     };
 
 
     public String getName(){
-            return this.NameofProduct;}
+            return this.nameOfProduct;}
 
     public String getDescription()
-    {return this.Description;}
+    {return this.description;}
 
 
     public BigDecimal getPrice()
-    {return this.PriceofProduct;}
+    {return this.priceOfProduct;}
 
 
     public BigDecimal getStockAmount()
