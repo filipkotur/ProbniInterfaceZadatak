@@ -3,10 +3,17 @@ package hr.stratusit;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class ShoppingItem implements IShoppingItem{
+public class ShoppingItem extends Product implements IShoppingItem{
     Long ID;
     Product proizvod = new Product();
-   @Override
+    private BigDecimal quantity;
+    public ShoppingItem(Product stvar,BigDecimal kolicina){
+        proizvod=stvar;
+        quantity=kolicina;
+
+    }
+
+    @Override
     public Long getId(){
         return  ID;
 
@@ -21,7 +28,7 @@ public class ShoppingItem implements IShoppingItem{
     };
     @Override
     public BigDecimal getQuantity(){
-        return null;
+        return this.quantity;
     };
 
     /**

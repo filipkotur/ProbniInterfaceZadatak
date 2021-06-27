@@ -6,8 +6,8 @@ public class Korisnik {
 
     String ime;
     Long IdodKosare;
-    ArrayList<ShoppingCart> Kosara = new ArrayList<ShoppingCart>();
-    ArrayList<ShoppingItem> OdabraniProizvod = new ArrayList<ShoppingItem>();
+    ShoppingCart Kosara = new ShoppingCart();
+
 }
 
 

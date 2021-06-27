@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ShoppingCart implements  IShoppingCart {
+public class ShoppingCart   implements  IShoppingCart {
     Long IdodKosare;
-    ArrayList<Product> SviProizvodiUkosari = new ArrayList<Product>();
+    ArrayList<ShoppingItem> SviProizvodiUkosari = new ArrayList<ShoppingItem>();
+    ShoppingCart(){}
 
     public  Long getId() {
-        return IdodKosare;
+
+        return this.IdodKosare;
     }
 
     public  String getUser() {
@@ -27,6 +29,7 @@ public class ShoppingCart implements  IShoppingCart {
 
     @Override
     public List<IShoppingItem> getItems() {
+
         return null;
     }
 
@@ -35,12 +38,15 @@ public class ShoppingCart implements  IShoppingCart {
         return null;
     }
 
-    @Override
     public boolean addItem(IProduct product, BigDecimal quantity) {
-        SviProizvodiUkosari.add(product);
+        Product proizvod = (Product) product;
+        int pozicija = SviProizvodiUkosari.indexOf(SviProizvodiUkosari.size()-1);
+        ShoppingItem noviproizvodukosari = new ShoppingItem(proizvod,quantity);
 
-        return false;
-    }
+        if(SviProizvodiUkosari.add(noviproizvodukosari)){return true;
+
+    }else
+        return false;}
 
     @Override
     public boolean removeItem(IProduct product, BigDecimal quantity) {
