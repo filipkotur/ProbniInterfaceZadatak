@@ -34,7 +34,7 @@ public interface IShoppingCart {
      * @return List of all items in the shopping cart
      * List returns all items sorted alphabetically by Producer and Product name
      */
-    List<IShoppingItem> getItems();
+    List< IShoppingItem> getItems();
     
     /**
      *
