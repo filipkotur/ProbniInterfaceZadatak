@@ -38,18 +38,7 @@ public class ShoppingItem extends Product implements IShoppingItem{
         return this.quantity;
     }
 
-    public static Comparator<ShoppingItem> nameProducerCompare = new Comparator<ShoppingItem>() {
-        @Override
-        public int compare(ShoppingItem jc1, ShoppingItem jc2) {
-            return (int) (jc1.oneProduct.getProducer().compareTo(jc2.oneProduct.getProducer()));
-        }
-    };
-    public static Comparator<ShoppingItem> nameProduceCompare = new Comparator<ShoppingItem>() {
-        @Override
-        public int compare(ShoppingItem jc1, ShoppingItem jc2) {
-            return (int) (jc1.oneProduct.getName().compareTo(jc2.oneProduct.getName()));
-        }
-    };
+
 
     public BigDecimal getPrice(){
 

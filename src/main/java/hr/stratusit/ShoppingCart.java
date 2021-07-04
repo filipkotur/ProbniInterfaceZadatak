@@ -11,7 +11,7 @@ public class ShoppingCart   implements  IShoppingCart {
     String nameOfUser;
     Long idFromBasket;
     Date dateOfCartCreated = new Date();
-    ArrayList<ShoppingItem> allProductInBasket = new ArrayList<ShoppingItem>();
+    ArrayList<ShoppingItem> allProductInBasket = new ArrayList<>();
     ShoppingCart(String nameOfUser,Date dateOfCreatingCart,ArrayList<ShoppingItem> allProductInBasket){
         this.nameOfUser = nameOfUser;
         dateOfCartCreated=dateOfCreatingCart;
@@ -39,8 +39,20 @@ public class ShoppingCart   implements  IShoppingCart {
 
 
     public List<IShoppingItem> getItems() {
-        Collections.sort(allProductInBasket,allProductInBasket.nameProducerCompare);
-        Collections.sort(allProductInBasket,allProductInBasket.nameProduceCompare);
+        Collections.sort(allProductInBasket, new Comparator<ShoppingItem>(){
+            @Override
+            public int compare(ShoppingItem left, ShoppingItem right) {
+                return (int) (left.oneProduct.getProducer().compareTo(right.oneProduct.getProducer()));
+            }
+        });
+        Collections.sort(allProductInBasket, new Comparator<ShoppingItem>(){
+            @Override
+            public int compare(ShoppingItem left, ShoppingItem right) {
+                return (int) (left.oneProduct.getName().compareTo(right.oneProduct.getName()));
+            }
+        });
+
+
         return returnInterfaceList(allProductInBasket);
     }
 
